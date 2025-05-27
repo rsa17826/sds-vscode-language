@@ -1,0 +1,102 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.sds",
+  "name": "sds",
+  "foldingStartMarker": "[\\[{]",
+  "foldingStopMarker": "[\\]}]",
+  "patterns": [{ "include": "#types" }],
+  "repository": {
+    "nocommainnum": {
+      "patterns": [
+        {
+          "match": ",",
+          "name": "sds.type.none"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "begin": "\\b(VEC[23]I)",
+          "end": "\\)",
+          "name": "sds.type.int",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "patterns": [
+            {
+              "match": ",",
+              "name": "sds.separator.comma"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(VEC[23])",
+          "end": "\\)",
+          "name": "sds.type.float",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "patterns": [
+            {
+              "match": ",",
+              "name": "sds.separator.comma"
+            }
+          ]
+        },
+        {
+          "patterns": [
+            {
+              "match": "\\b\\d+\\.\\d+\\b",
+              "name": "sds.number.float"
+            },
+            {
+              "match": "\\b\\d+\\b",
+              "name": "sds.number.integer"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(STR)\\(",
+          "end": "(?<!(?<!(?<!(?<!\\\\)\\\\)\\\\)\\\\)\\)",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "name": "sds.type.str"
+        },
+        {
+          "begin": "\\b(INT)\\(",
+          "end": "\\)",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "name": "sds.type.int"
+        },
+        {
+          "begin": "\\b(FLOAT)\\(",
+          "end": "\\)",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "name": "sds.type.float"
+        },
+        {
+          "begin": "\\b(BOOL)\\(",
+          "end": "\\)",
+          "captures": {
+            "1": { "name": "sds.type.name" }
+          },
+          "name": "sds.type.bool"
+        },
+        {
+          "match": "\\b(DICT|ARR)\\b",
+          "name": "sds.type.name"
+        },
+        {
+          "match": ".",
+          "name": "sds.unsettype"
+        }
+      ]
+    }
+  }
+}
