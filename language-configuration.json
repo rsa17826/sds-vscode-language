@@ -1,28 +1,28 @@
 {
-  "onEnterRules": [
-    {
-      "action": {
-        "indent": "indent"
-      },
-      "beforeText": "[\\[{]"
-    },
-    {
-      "action": {
-        "indent": "indentOutdent"
-      },
-      "beforeText": "[\\]}]"
-    }
-  ],
-  "brackets": [
-    ["(", ")"],
-    ["[", "]"],
-    ["{", "}"]
-  ],
-  "colorizedBracketPairs": [
-    ["(", ")"],
-    ["[", "]"],
-    ["{", "}"]
-  ],
+  // "onEnterRules": [
+  //   {
+  //     "action": {
+  //       "indent": "indent"
+  //     },
+  //     "beforeText": "[\\[{]"
+  //   },
+  //   {
+  //     "action": {
+  //       "indent": "indentOutdent"
+  //     },
+  //     "beforeText": "[\\]}]"
+  //   }
+  // ],
+  // "brackets": [
+  //   ["(", ")"],
+  //   ["[", "]"],
+  //   ["{", "}"]
+  // ],
+  // "colorizedBracketPairs": [
+  //   ["(", ")"],
+  //   ["[", "]"],
+  //   ["{", "}"]
+  // ],
   "autoClosingPairs": [
     { "open": "(", "close": ")", "notIn": ["string"] },
     { "open": "[", "close": "]", "notIn": ["string"] },

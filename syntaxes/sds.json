@@ -18,11 +18,15 @@
       "patterns": [
         {
           "begin": "\\b(VEC[23]I)",
-          "end": "\\)",
-          "name": "sds.type.int",
+          "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
           },
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
+          },
+          "name": "sds.type.int",
           "patterns": [
             {
               "match": ",",
@@ -32,11 +36,15 @@
         },
         {
           "begin": "\\b(VEC[23])",
-          "end": "\\)",
-          "name": "sds.type.float",
+          "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
           },
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
+          },
+          "name": "sds.type.float",
           "patterns": [
             {
               "match": ",",
@@ -57,34 +65,59 @@
           ]
         },
         {
-          "begin": "\\b(STR)\\(",
-          "end": "(?<!(?<!(?<!(?<!\\\\)\\\\)\\\\)\\\\)\\)",
+          "begin": "\\b(STR)(\\()",
+          "end": "(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
           },
-          "name": "sds.type.str"
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
+          },
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "sds.escaped"
+            },
+            {
+              "match": ".",
+              "name": "sds.type.str"
+            }
+          ]
         },
         {
-          "begin": "\\b(INT)\\(",
-          "end": "\\)",
+          "begin": "\\b(INT)(\\()",
+          "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
+          },
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
           },
           "name": "sds.type.int"
         },
         {
-          "begin": "\\b(FLOAT)\\(",
-          "end": "\\)",
+          "begin": "\\b(FLOAT)(\\()",
+          "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
+          },
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
           },
           "name": "sds.type.float"
         },
         {
-          "begin": "\\b(BOOL)\\(",
-          "end": "\\)",
+          "begin": "\\b(BOOL)(\\()",
+          "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" }
+            "1": { "name": "sds.type.name" },
+            "2": { "name": "sds.containers" }
+          },
+          "endCaptures": {
+            "1": { "name": "sds.containers" }
           },
           "name": "sds.type.bool"
         },
@@ -93,8 +126,8 @@
           "name": "sds.type.name"
         },
         {
-          "match": ".",
-          "name": "sds.unsettype"
+          "match": "[\\]}{\\[]",
+          "name": "sds.containers"
         }
       ]
     }
