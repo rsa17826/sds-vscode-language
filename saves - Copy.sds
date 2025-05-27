@@ -1,58 +1,58 @@
-DICT{
-  STR(New map)DICT{
-    STR(playerDelogPosition)ARR[
+{
+  STR(New map){
+    STR(playerDelogPosition)[
       FLOAT(127.24146270752)
       FLOAT(-98.5012512207031)
     ]
-    STR(lastSpawnPoint)ARR[
+    STR(lastSpawnPoint)[
       FLOAT(0.0)
       FLOAT(0.0)
     ]
-    STR(text \) more text)ARR[
-      DICT{
+    STR(text \) more text)[
+      {
         STR(name)STR(hub)
         STR(spawnPoint)VEC2(0.0,0.0)
         STR(foundStar)BOOL(false)
       }
     ]
-    STR(beatLevels)ARR[]
-    STR(levels)DICT{
-      STR(hub)DICT{
+    STR(beatLevels)[]
+    STR(levels){
+      STR(hub){
         STR(name)STR(hub)
         STR(spawnPoint)VEC2(0.0,0.0)
         STR(foundStar)BOOL(false)
       }
     }
   }
-  STR(vex 3)DICT{
-    STR(playerDelogPosition)ARR[
+  STR(vex 3){
+    STR(playerDelogPosition)[
       FLOAT(-666.258911132813)
       FLOAT(58.4937438964844)
     ]
-    STR(lastSpawnPoint)ARR[
+    STR(lastSpawnPoint)[
       FLOAT(-673.59228515625)
       INT(58.4937438964844)
     ]
-    STR(loadedLevels)ARR[
-      DICT{
+    STR(loadedLevels)[
+      {
         STR(name)STR(hub)
         STR(spawnPoint)VEC2I(0.0,18.4861450195313)
         STR(foundStar)BOOL(false)
       }
-      DICT{
+      {
         STR(name)STR(stage 1)
         STR(spawnPoint)VEC2(0.0,0.0)
         STR(foundStar)BOOL(false)
       }
     ]
-    STR(beatLevels)ARR[]
-    STR(levels)DICT{
-      STR(hub)DICT{
+    STR(beatLevels)[]
+    STR(levels){
+      STR(hub){
         STR(name)STR(hub)
         STR(spawnPoint)VEC2(0.0,18.4861450195313)
         STR(foundStar)BOOL(false)
       }
-      STR(stage 1)DICT{
+      STR(stage 1){
         STR(name)STR(stage 1)
         STR(spawnPoint)VEC2(0.0,0.0)
         STR(foundStar)BOOL(false)
