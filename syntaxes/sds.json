@@ -10,7 +10,7 @@
       "patterns": [
         {
           "match": ",",
-          "name": "sds.type.none"
+          "name": "type.none.sds"
         }
       ]
     },
@@ -20,17 +20,17 @@
           "begin": "\\b(VEC[234]I)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.int",
+          "name": "type.int.sds",
           "patterns": [
             {
               "match": ",",
-              "name": "sds.separator.comma"
+              "name": "separator.comma.sds"
             }
           ]
         },
@@ -38,17 +38,17 @@
           "begin": "\\b(COLOR)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.float",
+          "name": "type.float.sds",
           "patterns": [
             {
               "match": ",",
-              "name": "sds.separator.comma"
+              "name": "separator.comma.sds"
             }
           ]
         },
@@ -56,17 +56,17 @@
           "begin": "\\b(VEC[234])(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.float",
+          "name": "type.float.sds",
           "patterns": [
             {
               "match": ",",
-              "name": "sds.separator.comma"
+              "name": "separator.comma.sds"
             }
           ]
         },
@@ -74,17 +74,17 @@
           "begin": "\\b(RECT2)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.float",
+          "name": "type.float.sds",
           "patterns": [
             {
               "match": ",",
-              "name": "sds.separator.comma"
+              "name": "separator.comma.sds"
             }
           ]
         },
@@ -92,17 +92,17 @@
           "begin": "\\b(RECT2I)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.int",
+          "name": "type.int.sds",
           "patterns": [
             {
               "match": ",",
-              "name": "sds.separator.comma"
+              "name": "separator.comma.sds"
             }
           ]
         },
@@ -110,20 +110,21 @@
           "begin": "\\b(STR)(\\()",
           "end": "(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
+          "contentName": "string.sds",
           "patterns": [
             {
               "match": "\\\\.",
-              "name": "sds.escaped"
+              "name": "escaped.sds"
             },
             {
               "match": ".",
-              "name": "sds.type.str"
+              "name": "type.str.sds"
             }
           ]
         },
@@ -131,20 +132,20 @@
           "begin": "\\b(STRNAME)(\\()",
           "end": "(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!(?<!\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)\\\\)(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
           "patterns": [
             {
               "match": "\\\\.",
-              "name": "sds.escaped"
+              "name": "escaped.sds"
             },
             {
               "match": ".",
-              "name": "sds.type.strname"
+              "name": "type.strname.sds"
             }
           ]
         },
@@ -152,41 +153,41 @@
           "begin": "\\b(INT)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.int"
+          "name": "type.int.sds"
         },
         {
           "begin": "\\b(FLOAT)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.float"
+          "name": "type.float.sds"
         },
         {
           "begin": "\\b(BOOL)(\\()",
           "end": "(\\))",
           "captures": {
-            "1": { "name": "sds.type.name" },
-            "2": { "name": "sds.containers" }
+            "1": { "name": "type.name.sds" },
+            "2": { "name": "containers.sds" }
           },
           "endCaptures": {
-            "1": { "name": "sds.containers" }
+            "1": { "name": "containers.sds" }
           },
-          "name": "sds.type.bool"
+          "name": "type.bool.sds"
         },
         {
           "match": "[\\]}{\\[]",
-          "name": "sds.containers"
+          "name": "containers.sds"
         }
       ]
     }
