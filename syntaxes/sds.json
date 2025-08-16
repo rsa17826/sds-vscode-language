@@ -119,8 +119,18 @@
           "contentName": "string.sds",
           "patterns": [
             {
-              "match": "\\\\.",
-              "name": "escaped.sds"
+              "match": "(\\\\)(\\\\)(?!\\))|(\\\\)(\\))|(\\\\)(?!\\\\)|(\\\\)(\\\\)(\\))",
+              "name": "",
+              "captures": {
+                "6": { "name": "null.sds" },
+                "7": { "name": "escaped.sds" },
+                "8": { "name": "error.sds" },
+                "1": { "name": "null.sds" },
+                "2": { "name": "escaped.sds" },
+                "3": { "name": "null.sds" },
+                "4": { "name": "escaped.sds" },
+                "5": { "name": "escaped.sds" }
+              }
             },
             {
               "match": ".",
@@ -130,7 +140,7 @@
         },
         {
           "match": "\\b(NULL)(\\(\\))",
-          "contentName": "null.sds"
+          "name": "type.name.sds"
         },
         {
           "begin": "\\b(STRNAME)(\\()",

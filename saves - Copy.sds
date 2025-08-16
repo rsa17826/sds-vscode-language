@@ -36,7 +36,7 @@
     STR(loadedLevels)[
       {
         STR(name)STR(hub)
-        STR(spawnPoint)VEC2I(0.0,18.4861450195313)
+        STR(spawnPoint)VEC2I(0,18.4861450195313)
         STR(foundStar)BOOL(false)
       }
       {

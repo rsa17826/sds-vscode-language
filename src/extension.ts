@@ -579,29 +579,31 @@ function loadData(d: string, exact?: boolean): any {
       case "STR":
         // if ('loadOnlineLevelListOnSceneLoad' ! in remainingData && '\\' in remainingData){
         //   log(remainingData)
-        //   debugger
+        // debugger
         thisdata = remainingData
-          .replace("\\\\", "ESCAPED" + UNSET)
-          .replace("\\)", "PERIN" + UNSET) // replace the escaped escapes, then replace the escaped )s with data ! used in the saved data to let the regex detect the real ending )
+          .replaceAll("\\\\", "ESCAPED" + UNSET)
+          .replaceAll("\\)", "PERIN" + UNSET) // replaceAll the escaped escapes, then replaceAll the escaped )s with data ! used in the saved data to let the regex detect the real ending )
         thisdata = thisdata.substr(1, thisdata.indexOf(")") - 1) // get the data from the start ( to the first real ), ! escaped ), that were hid just above
         thisdata = thisdata
-          .replace("ESCAPED" + UNSET, "\\\\")
-          .replace("PERIN" + UNSET, ")") // restore the hidden \ && )s
+          .replaceAll("ESCAPED" + UNSET, "\\\\")
+          .replaceAll("PERIN" + UNSET, ")") // restore the hidden \ && )s
         remainingData = remainingData.substr(
-          thisdata.replace("\\", "\\").replace(")", "\\)").length + 2 // re expand the replacements to make same length as the escaped chars would be
+          thisdata.replaceAll("\\", "\\").replaceAll(")", "\\)")
+            .length + 2 // re expand the replacements to make same length as the escaped chars would be
         )
-        thisdata = thisdata.replace("\\\\", "\\")
+        thisdata = thisdata.replaceAll("\\\\", "\\")
         break
       case "STRNAME":
         thisdata = remainingData
-          .replace("\\\\", "ESCAPED" + UNSET)
-          .replace("\\)", "PERIN" + UNSET) // replace the escaped escapes, then replace the escaped )s with data ! used in the saved data to let the regex detect the real ending )
+          .replaceAll("\\\\", "ESCAPED" + UNSET)
+          .replaceAll("\\)", "PERIN" + UNSET) // replaceAll the escaped escapes, then replaceAll the escaped )s with data ! used in the saved data to let the regex detect the real ending )
         thisdata = thisdata.substr(1, thisdata.indexOf(")") - 1) // get the data from the start ( to the first real ), ! escaped ), that were hid just above
         thisdata = thisdata
-          .replace("ESCAPED" + UNSET, "\\\\")
-          .replace("PERIN" + UNSET, ")") // restore the hidden \ && )s
+          .replaceAll("ESCAPED" + UNSET, "\\\\")
+          .replaceAll("PERIN" + UNSET, ")") // restore the hidden \ && )s
         remainingData = remainingData.substr(
-          thisdata.replace("\\", "\\\\").replace(")", "\\)").length + // re expand the replacements to make same length as the escaped chars would be
+          thisdata.replaceAll("\\", "\\\\").replaceAll(")", "\\)")
+            .length + // re expand the replacements to make same length as the escaped chars would be
             2
         )
         thisdata = exact ? new StringName(thisdata) : thisdata
@@ -760,13 +762,16 @@ function saveData(val: any, _level = 0): string {
       case "string_name":
         return (
           "STRNAME(" +
-          String(val).replace("\\", "\\\\").replace(")", "\\)") +
+          String(val)
+            .replaceAll("\\", "\\\\")
+            .replaceAll(")", "\\)")
+            .replaceAll(/\\(?!\\|\))/g, "\\") +
           ")"
         )
       case "vector4":
-        return "VEC4" + String(val).replace(" ", "")
+        return "VEC4" + String(val).replaceAll(" ", "")
       case "vector4i":
-        return "VEC4I" + String(val).replace(" ", "")
+        return "VEC4I" + String(val).replaceAll(" ", "")
       case "int":
         return "INT(" + String(val) + ")"
       case "number":
@@ -799,8 +804,11 @@ function saveData(val: any, _level = 0): string {
       case "string":
         return (
           "STR(" +
-          String(val).replace("\\", "\\\\").replace(")", "\\)") +
-          ")"
+          String(val)
+            .replaceAll("\\", "\\\\")
+            .replaceAll(")", "\\)")
+            .replaceAll(/\\\\(?!\\|\))/g, "\\") 
+          +")"
         )
       case "boolean":
         return "BOOL(" + String(val) + ")"
