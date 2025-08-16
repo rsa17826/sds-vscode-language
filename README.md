@@ -4,55 +4,75 @@ colors setting
 "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": "sds.unsettype",
+        "scope": "escaper.sds",
+        "settings": {
+          "foreground": "#6f6f6f45",
+          "fontStyle": "strikethrough"
+        }
+      },
+      {
+        "scope": "error.sds",
+        "settings": {
+          "foreground": "#d10000ec",
+          "fontStyle": "strikethrough"
+        }
+      },
+      {
+        "scope": "unsettype.sds",
         "settings": {
           "foreground": "#c400b7ee"
         }
       },
       {
-        "scope": "sds.containers",
+        "scope": "containers.sds",
         "settings": {
           "foreground": "#7fa7a4ee"
         }
       },
       {
-        "scope": "sds.type.str",
+        "scope": "type.str.sds",
         "settings": {
           "foreground": "#bc8d00"
         }
       },
       {
-        "scope": "sds.type.int",
+        "scope": "type.strname.sds",
+        "settings": {
+          "foreground": "#8b4100"
+        }
+      },
+      {
+        "scope": "type.int.sds",
         "settings": {
           "foreground": "#007007ee"
         }
       },
       {
-        "scope": "sds.type.float",
+        "scope": "type.float.sds",
         "settings": {
           "foreground": "#00b35aee"
         }
       },
       {
-        "scope": "sds.type.bool",
+        "scope": "type.bool.sds",
         "settings": {
           "foreground": "#0020d2ee"
         }
       },
       {
-        "scope": "sds.separator.comma",
+        "scope": "separator.comma.sds",
         "settings": {
           "foreground": "#767676"
         }
       },
       {
-        "scope": "sds.type.name",
+        "scope": "type.name.sds",
         "settings": {
           "foreground": "#767676"
         }
       },
       {
-        "scope": "sds.escaped",
+        "scope": "escaped.sds",
         "settings": {
           "foreground": "#ff7700"
         }
