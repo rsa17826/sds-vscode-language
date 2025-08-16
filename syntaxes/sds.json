@@ -122,12 +122,12 @@
               "match": "(\\\\)(\\\\)(?!\\))|(\\\\)(\\))|(\\\\)(?!\\\\)|(\\\\)(\\\\)(\\))",
               "name": "",
               "captures": {
-                "6": { "name": "null.sds" },
+                "6": { "name": "escaper.sds" },
                 "7": { "name": "escaped.sds" },
                 "8": { "name": "error.sds" },
-                "1": { "name": "null.sds" },
+                "1": { "name": "escaper.sds" },
                 "2": { "name": "escaped.sds" },
-                "3": { "name": "null.sds" },
+                "3": { "name": "escaper.sds" },
                 "4": { "name": "escaped.sds" },
                 "5": { "name": "escaped.sds" }
               }
